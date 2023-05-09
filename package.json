@@ -1,0 +1,20 @@
+{
+  "name": "rpgmaster",
+  "version": "1.0.0",
+  "author": "Adriano Monteiro <adrianomonteiroweb@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start:api": "yarn workspace @rpgmaster/api start",
+    "build:api": "yarn workspace @rpgmaster/api build",
+    "dev:api": "yarn workspace @rpgmaster/api dev",
+    "test:api": "yarn workspace @rpgmaster/api test",
+    "serve:web": "yarn workspace @rpgmaster/web serve",
+    "build:web": "yarn workspace @rpgmaster/web build"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
