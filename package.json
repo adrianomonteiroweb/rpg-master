@@ -5,12 +5,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start:api": "yarn workspace @rpgmaster/api start",
-    "build:api": "yarn workspace @rpgmaster/api build",
-    "dev:api": "yarn workspace @rpgmaster/api dev",
-    "test:api": "yarn workspace @rpgmaster/api test",
-    "serve:web": "yarn workspace @rpgmaster/web serve",
-    "build:web": "yarn workspace @rpgmaster/web build"
+    "api": "yarn workspace @rpgmaster/api api",
+    "build-api": "yarn workspace @rpgmaster/api build-api",
+    "dev": "yarn workspace @rpgmaster/api dev",
+    "test": "yarn workspace @rpgmaster/api test",
+    "start": "yarn workspace @rpgmaster/web start",
+    "build-web": "yarn workspace @rpgmaster/web build-web"
   },
   "workspaces": {
     "packages": [
