@@ -6,6 +6,9 @@ import app from "./app";
 
 dotenv.config({ path: path.join(__dirname, "../../../.env") });
 
+import routes from "./routes";
+
+app.use(routes);
 app.use(cors);
 
 const PORT = process.env.PORT || 3001;
