@@ -7,12 +7,15 @@ import app from "./app";
 dotenv.config({ path: path.join(__dirname, "../../../.env") });
 
 import routes from "./routes";
+import runConnect from "./database/models/connection";
 
 app.use(routes);
 app.use(cors);
 
 const PORT = process.env.PORT || 3001;
 const HOST = process.env.HOST || "localhost";
+
+runConnect();
 
 app.listen(PORT, () => {
   const statusServer =
