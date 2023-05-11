@@ -1,5 +1,5 @@
 import ICharacter from "../database/interfaces/character.interface";
-import { CharactersRepository } from "../database/repositories/caharacter.repository";
+import { CharactersRepository } from "../database/repositories/character.repository";
 
 export class CharactersService {
   private readonly _CharactersRepository = new CharactersRepository();
