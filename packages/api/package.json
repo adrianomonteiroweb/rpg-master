@@ -5,7 +5,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "nodemon src/index.ts"
+    "start": "node public/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc"
   },
   "dependencies": {
     "@types/cors": "^2.8.13",
