@@ -10,7 +10,7 @@
     "dev": "yarn workspace @rpgmaster/api dev",
     "test": "yarn workspace @rpgmaster/api test",
     "start": "yarn workspace @rpgmaster/web start",
-    "build-web": "yarn workspace @rpgmaster/web build-web"
+    "build": "yarn workspace @rpgmaster/web build"
   },
   "workspaces": {
     "packages": [

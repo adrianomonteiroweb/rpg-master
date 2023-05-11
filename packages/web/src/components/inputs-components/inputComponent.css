@@ -1,0 +1,27 @@
+[for="title-campaign"] h6,
+[for="subtitle-campaign"] h6 {
+  color: rgb(70, 66, 66);
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.input-component {
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid rgba(70, 66, 66, 0.404);
+  border-bottom: 1px solid rgb(70, 66, 66);
+  color: rgb(70, 66, 66);
+  width: 80%;
+  text-align: center;
+}
+
+@media (max-width: 320px) {
+  [for="title-campaign"] h6,
+  [for="subtitle-campaign"] h6 {
+    font-size: 12px;
+  }
+
+  .input-component {
+    font-size: 12px;
+  }
+}
