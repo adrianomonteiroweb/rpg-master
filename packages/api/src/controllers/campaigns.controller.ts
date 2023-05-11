@@ -5,6 +5,19 @@ import { CampaignsService } from '../services/campaings.service';
 export class CampaignsController {
   private readonly _service = new CampaignsService();
 
+  async getRPGMasterController(_req: Request, res: Response): Promise<Response> {
+    let rpgMaster = {
+      message: "RPG Master"
+    };
+
+    try {
+      return res.status(200).json(rpgMaster);
+    } catch (error: any) {
+      return res.status(500).json({ message: error.message });
+    }
+
+  }
+
   async getAllCampaignsController(_req: Request, res: Response): Promise<Response> {
     let allCampaigns;
 

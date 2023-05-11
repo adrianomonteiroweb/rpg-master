@@ -10,7 +10,12 @@ import routes from "./routes";
 import runConnect from "./database/models/connection";
 
 app.use(routes);
-app.use(cors);
+app.use(cors({
+  origin:
+      'rpgmaster-oo5v6afay-adrianomonteiroweb.vercel.app',
+    methods: 'GET',
+  })
+);
 
 const PORT = process.env.PORT || 3001;
 const HOST = process.env.HOST || "localhost";
