@@ -11,7 +11,10 @@ export class CampaignsController {
     };
 
     try {
-      return res.status(200).json(rpgMaster);
+      return res
+        .header('Access-Control-Allow-Origin', '*')
+        .status(200)
+        .json(rpgMaster);
     } catch (error: any) {
       return res.status(500).json({ message: error.message });
     }

@@ -12,7 +12,7 @@ import runConnect from "./database/models/connection";
 app.use(routes);
 app.use(cors({
   origin:
-      'rpgmaster-oo5v6afay-adrianomonteiroweb.vercel.app',
+      'https://rpgmaster-api.vercel.app/',
     methods: 'GET',
   })
 );
