@@ -35,7 +35,7 @@ function InputComponent({
 }
 
 InputComponent.propTypes = {
-  input: PropTypes,
+  input: PropTypes.any,
 };
 
 export default InputComponent;

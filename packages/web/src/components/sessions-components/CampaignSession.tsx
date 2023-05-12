@@ -1,21 +1,35 @@
+import { useContext } from "react";
+
 import InputComponent from "../inputs-components/InputComponent";
 
 import "./campaignSession.css";
+import { IsContext } from "../../context/IsProvider";
+import MenuComponent from "../menu-component/menuComponent";
 
 function CampaignSession() {
+  const { campaign, setCampaign } = useContext(IsContext);
+  
+  const setCampaignFunc = (event: any, prop: any) =>
+    event.target.id === "title-campaign"
+      ? setCampaign({ ...campaign, title: event.target.value })
+      : setCampaign({ ...campaign, subtitle: event.target.value });
+  
   return (
     <div className="CampaignSession">
+      <MenuComponent />
       <InputComponent input={[
         "text",
         "title-campaign",
-        "Crônicas de Alsaid",
+        campaign.title,
         "Campanha",
+        setCampaignFunc
       ]} />
       <InputComponent input={[
         "text",
         "subtitle-campaign",
-        "Entre areia e sangue",
-        "Sub-título",
+        campaign.subtitle,
+        "",
+        setCampaignFunc
       ]} />
     </div>
   );
