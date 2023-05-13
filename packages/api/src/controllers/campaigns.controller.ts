@@ -27,11 +27,12 @@ export class CampaignsController {
       allCampaigns = await this._service.getAllCampaignsService();
     } catch (error: any) {
       return res
-        .header('Access-Control-Allow-Origin', '*')
         .status(500).json({ message: error.message });
     }
-
-    return res.status(200).json(allCampaigns);
+    
+    return res
+      .status(200)
+      .json(allCampaigns);
   }
 
   async createNewUserController(

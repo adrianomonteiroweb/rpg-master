@@ -10,33 +10,26 @@ function MenuComponent() {
   const { campaign } = useContext(IsContext);
 
   const saveToDatabaseByAPI = async (target: any) => {
-    // const fetchPost = await fetchResultAPI(
-    //   "post",
-    //   "https://rpgmaster-api.vercel.app",
-    //   "campaign",
-    //     campaign
-    //   );
-
-    const fetchGet = await fetchResultAPI(
+    const fetchIs = await fetchResultAPI(
       "get",
-      "http://localhost:3333",
+      "https://rpgmaster-api.vercel.app",
       "campaign",
-        campaign
-      );
+      campaign
+    );
 
-      console.log("get", fetchGet);
+    console.log(fetchIs);
   };
 
   return (
     <div className="MenuComponent">
-        <ButtonComponent
-          btn={[
-            "Salvar",
-            "button-component save",
-            "top-menu-save",
-            saveToDatabaseByAPI
-          ]}
-        />
+      <ButtonComponent
+        btn={[
+          "Salvar",
+          "button-component save",
+          "top-menu-save",
+          saveToDatabaseByAPI
+        ]}
+      />
     </div>
   );
 }

@@ -8,26 +8,24 @@ const fetchResultAPI = async (
     id?: number
     ) => {
     try {
-      let response;
+      switch (method) {
+        case "get":
+          return !id
+            ? await axios.get(`${url}/${alias}`)
+            : await axios.get(`${url}/${alias}/${id}`);
+
+        case "put":
+          return await axios.put(`${url}/${alias}/${id}`, {...data});
+
+        case "delete":
+          return await axios.delete(`${url}/${alias}/${id}`);
       
-      // if (!id && method === "get") 
-      response =  await axios.get(`${url}/${alias}`);
-      // if (id && method === "get") response =  await axios.get(`${url}/${alias}/${id}`);
-
-      // response = method === "post" && await axios.post(`${url}/${alias}`, {
-      //   ...data
-      // });
-
-      // if (id && method === "put") response = await axios
-      // .put(`${url}/${alias}/${id}`, {
-      //   ...data
-      // });
-
-      // if (id && method === "delete") response = await axios
-      // .delete(`${url}/${alias}/${id}`);
-      // console.log(response);
-      
-      return response;
+        default:
+          const created = await axios.post(`${url}/${alias}`, {...data});
+          console.log("POST", created);
+          
+          return created;
+      }
     } catch (error: any) {
       console.error(error.message);
     }
