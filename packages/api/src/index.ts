@@ -10,12 +10,7 @@ import routes from "./routes";
 import runConnect from "./database/models/connection";
 
 app.use(routes);
-app.use(cors({
-  origin:
-      'https://rpgmaster-api.vercel.app/',
-    methods: 'GET',
-  })
-);
+app.use(cors());
 
 const PORT = process.env.PORT || 3001;
 const HOST = process.env.HOST || "localhost";

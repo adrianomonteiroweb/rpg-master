@@ -19,12 +19,12 @@ function MenuComponent() {
 
     const fetchGet = await fetchResultAPI(
       "get",
-      "https://rpgmaster-api.vercel.app",
-      "",
+      "http://localhost:3333",
+      "campaign",
         campaign
       );
 
-      console.log("post", fetchGet);
+      console.log("get", fetchGet);
   };
 
   return (

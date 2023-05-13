@@ -12,7 +12,6 @@ export class CampaignsController {
 
     try {
       return res
-        .header('Access-Control-Allow-Origin', '*')
         .status(200)
         .json(rpgMaster);
     } catch (error: any) {
@@ -27,7 +26,9 @@ export class CampaignsController {
     try {
       allCampaigns = await this._service.getAllCampaignsService();
     } catch (error: any) {
-      return res.status(500).json({ message: error.message });
+      return res
+        .header('Access-Control-Allow-Origin', '*')
+        .status(500).json({ message: error.message });
     }
 
     return res.status(200).json(allCampaigns);
@@ -40,7 +41,9 @@ export class CampaignsController {
     try {
       await this._service.createNewCampaignservice(req.body);
 
-      return res.status(200).json({ message: 'Campaign created successfully' });
+      return res
+        .header('Access-Control-Allow-Origin', '*')
+        .status(200).json({ message: 'Campaign created successfully' });
     } catch (error: any) {
       return res.status(500).json({ message: error.message });
     }
