@@ -11,13 +11,13 @@ function MenuComponent() {
 
   const saveToDatabaseByAPI = async (target: any) => {
     const fetchIs = await fetchResultAPI(
-      "get",
-      "https://rpgmaster-api.vercel.app",
+      "post",
+      process.env.REACT_APP_HOST,
       "campaign",
       campaign
     );
 
-    console.log(fetchIs);
+    console.log(fetchIs, process.env.REACT_APP_HOST);
   };
 
   return (

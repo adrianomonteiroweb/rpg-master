@@ -2,12 +2,14 @@ import axios from "./fetchLibrary";
 
 const fetchResultAPI = async (
     method: string,
-    url: string,
+    url: string | undefined,
     alias: string,
     data: object,
     id?: number
     ) => {
     try {
+      console.log(url);
+      
       switch (method) {
         case "get":
           return !id

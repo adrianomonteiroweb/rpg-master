@@ -43,8 +43,7 @@ export class CampaignsController {
       await this._service.createNewCampaignservice(req.body);
 
       return res
-        .header('Access-Control-Allow-Origin', '*')
-        .status(200).json({ message: 'Campaign created successfully' });
+        .status(201).json({ message: 'Campaign created successfully' });
     } catch (error: any) {
       return res.status(500).json({ message: error.message });
     }

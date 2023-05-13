@@ -12,7 +12,7 @@ import runConnect from "./database/models/connection";
 app.use(routes);
 app.use(cors(
   {
-    origin: ["*"],
+    origin: "*",
     methods: ['GET','POST','DELETE','UPDATE','PUT']
   }
 ));
