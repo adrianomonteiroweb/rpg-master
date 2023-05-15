@@ -11,6 +11,8 @@ export class CharactersRepository {
   }
 
   async createNewCharacterRepository(character: ICharacter | any) {
-    await this._CharactersModel.create(character);
+    const created = await this._CharactersModel.create(character);
+
+    return created._id;
   }
 }

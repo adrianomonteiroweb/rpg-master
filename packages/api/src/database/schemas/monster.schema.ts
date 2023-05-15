@@ -7,7 +7,8 @@ const monsterSchema = new Schema<IMonster>({
     iniciative: { type: String, required: true },
     ca: { type: Number, required: true },
     pvs: { type: Number },
-    damage: { type: Number }
+    damage: { type: Number },
+    status: { type: String }
 });
 
 export default monsterSchema;
