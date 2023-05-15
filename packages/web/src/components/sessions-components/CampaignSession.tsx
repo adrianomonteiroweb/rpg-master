@@ -15,7 +15,7 @@ function CampaignSession() {
       : setCampaign({ ...campaign, subtitle: event.target.value });
   
   return (
-    <div className="CampaignSession">
+    <div className="campaignSession">
       <MenuComponent />
       <InputComponent input={[
         "text",

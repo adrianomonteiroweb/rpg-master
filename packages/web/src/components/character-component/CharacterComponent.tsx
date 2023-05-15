@@ -1,0 +1,102 @@
+import InputComponent from "../inputs-components/InputComponent";
+
+import "./characterComponent.css"
+
+function CharacterComponent() {
+  return (
+    <tr className="character-tr">
+      <td>
+        <InputComponent
+          input={[
+            "text",
+            "character-name",
+            "",
+            ""
+          ]}
+        />
+      </td>
+      <td>
+        <InputComponent
+          input={[
+            "text",
+            "character-class",
+            "",
+            ""
+          ]}
+        />
+      </td>
+      <td>
+        <InputComponent
+          input={[
+            "text",
+            "player-name",
+            "",
+            ""
+          ]}
+        />
+      </td>
+      <td>
+        <InputComponent
+          input={[
+            "number",
+            "pv-character",
+            0,
+            ""
+          ]}
+        />
+      </td>
+      <td>
+        <InputComponent
+          input={[
+            "number",
+            "total-pv-character",
+            0,
+            ""
+          ]}
+        />
+      </td>
+      <td>
+        <InputComponent
+          input={[
+            "number",
+            "ca-character",
+            0,
+            ""
+          ]}
+        />
+      </td>
+      <td>
+        <InputComponent
+          input={[
+            "number",
+            "negative-pv-character",
+            0,
+            ""
+          ]}
+        />
+      </td>
+      <td>
+        <InputComponent
+          input={[
+            "string",
+            "class-powers-character",
+            0,
+            ""
+          ]}
+        />
+      </td>
+      <td>
+        <InputComponent
+          input={[
+            "string",
+            "status-character",
+            "",
+            ""
+          ]}
+        />
+      </td>
+    </tr>
+  );
+}
+
+export default CharacterComponent;

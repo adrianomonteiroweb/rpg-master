@@ -1,9 +1,13 @@
 import CampaignSession from "../components/sessions-components/CampaignSession";
+import CharacterSession from "../components/sessions-components/CharacterSession";
+
+import "./dashboardPage.css"
 
 function Dashboard() {
     return (
-      <div className="Dashboard">
+      <div className="dashboard">
         <CampaignSession />
+        <CharacterSession />
       </div>
     );
   }
