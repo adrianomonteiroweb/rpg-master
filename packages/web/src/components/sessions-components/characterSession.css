@@ -1,0 +1,10 @@
+.character-table {
+  width: 90%;
+  padding: 2px;
+}
+
+@media (max-width: 320px) {
+  table td {
+    font-size: 8px;
+  }
+}
