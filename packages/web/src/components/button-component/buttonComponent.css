@@ -1,7 +1,14 @@
 .button-component {
     background-color: transparent;
-    border: 0;
+    border: 1px solid rgb(77, 74, 74);
+    border-radius: 0 10px 0 10px;
     color: black;
     font-size: 12px;
     margin: 5px;
+}
+
+.button-component:hover {
+    background-color: rgba(255, 255, 0, 0.274);
+    border: 1px solid rgb(4, 4, 73);
+    color: black;
 }

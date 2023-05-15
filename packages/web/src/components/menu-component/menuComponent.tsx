@@ -33,7 +33,7 @@ function MenuComponent() {
   };
 
   return (
-    <div className="MenuComponent">
+    <div className="menuComponent">
       <ButtonComponent
         btn={[
           "Salvar",
