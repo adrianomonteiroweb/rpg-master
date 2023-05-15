@@ -11,6 +11,6 @@ export class CampaignsService {
   }
 
   async createNewCampaignservice(campaign: ICampaign) {
-    await this._CampaignsRepository.createNewUserRepository(campaign);
+    await this._CampaignsRepository.createNewCampaignRepository(campaign);
   }
 }

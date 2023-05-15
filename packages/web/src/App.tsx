@@ -9,9 +9,6 @@ function App() {
     <IsProvider>
       <div
         className="App"
-        style={{
-          backgroundImage: `url("bg.jpg")`
-        }}
       >
         <Dashboard />
       </div>

@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 
 import { CampaignsController } from "../controllers/campaigns.controller";
 import accessControlMiddleware from "../middleware/accessControl.middleware";
@@ -12,6 +13,7 @@ const useCampaignController = new CampaignsController();
 campaignRouter
   .get(
     "/",
+    accessControlMiddleware,
     (_req, res) => useCampaignController
       .getRPGMasterController(_req, res)
   );
@@ -24,10 +26,11 @@ campaignRouter
       .getAllCampaignsController(_req, res));
 
 campaignRouter
+  .options("/campaign", cors())
   .post(
     "/campaign",
     accessControlMiddleware,
     (_req, res) => useCampaignController
-      .createNewUserController(_req, res));
+      .createNewCampaignController(_req, res));
 
 export default campaignRouter;

@@ -8,8 +8,6 @@ const fetchResultAPI = async (
     id?: number
     ) => {
     try {
-      console.log(url);
-      
       switch (method) {
         case "get":
           return !id
@@ -22,11 +20,10 @@ const fetchResultAPI = async (
         case "delete":
           return await axios.delete(`${url}/${alias}/${id}`);
       
-        default:
-          const created = await axios.post(`${url}/${alias}`, {...data});
-          console.log("POST", created);
+        case "post":
+          console.log(`${url}/${alias}`, {...data});
           
-          return created;
+          return await axios.post(`${url}/${alias}`, {...data});
       }
     } catch (error: any) {
       console.error(error.message);
