@@ -11,6 +11,6 @@ export class CharactersService {
   }
 
   async createNewCharacterService(Character: ICharacter) {
-    await this._CharactersRepository.createNewCharacterRepository(Character);
+    return await this._CharactersRepository.createNewCharacterRepository(Character);
   }
 }

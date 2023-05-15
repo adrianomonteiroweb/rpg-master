@@ -7,4 +7,5 @@ export default interface ICharacter {
     ca: number;
     negativePV: number;
     classPowers: string;
+    status: string;
 }

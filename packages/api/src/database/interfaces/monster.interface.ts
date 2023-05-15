@@ -4,4 +4,5 @@ export default interface IMonster {
     ca: number;
     pvs: number;
     damage: number;
+    status: string;
 }

@@ -21,9 +21,9 @@ export class CharactersController {
     res: Response
   ): Promise<Response> {
     try {
-      await this._service.createNewCharacterService(req.body);
+      const characterID = await this._service.createNewCharacterService(req.body);
 
-      return res.status(200).json({ message: 'Character created successfully' });
+      return res.status(200).json({ message: 'Character created successfully', id: characterID });
     } catch (error: any) {
       return res.status(500).json({ message: error.message });
     }

@@ -10,7 +10,8 @@ const characterSchema = new Schema<ICharacter>({
     totalPv: { type: Number },
     ca: { type: Number },
     negativePV: { type: Number },
-    classPowers: { type: String }
+    classPowers: { type: String },
+    status: { type: String }
 });
 
 export default characterSchema;
