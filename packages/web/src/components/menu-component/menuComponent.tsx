@@ -10,21 +10,26 @@ function MenuComponent() {
   const { campaign } = useContext(IsContext);
 
   const saveToDatabaseByAPI = async (target: any) => {
-    const fetchGet = await fetchResultAPI(
-      "get",
-      process.env.REACT_APP_HOST,
-      "campaign",
-      campaign
-    );
+    const campaignID: string | null = localStorage.getItem("campaignID");
 
-    const fetchPost = await fetchResultAPI(
-      "post",
-      process.env.REACT_APP_HOST,
-      "campaign",
-      campaign
-    );
+    if (!campaignID) {
+      const fetchPost = await fetchResultAPI(
+        "post",
+        process.env.REACT_APP_HOST,
+        "campaign",
+        campaign
+      );
 
-    console.log(fetchGet, fetchPost, process.env.REACT_APP_HOST);
+      if (fetchPost) localStorage.setItem("campaignID", JSON.stringify(fetchPost.data.id))
+    } else {
+      await fetchResultAPI(
+        "put",
+        process.env.REACT_APP_HOST,
+        "campaign",
+        campaign,
+        JSON.parse(campaignID)
+      );
+    }
   };
 
   return (

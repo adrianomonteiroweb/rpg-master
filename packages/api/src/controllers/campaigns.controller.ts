@@ -40,11 +40,26 @@ export class CampaignsController {
     res: Response
   ): Promise<Response> {
     try {
-      await this._service.createNewCampaignservice(req.body);
+      const idCreated = await this._service.createNewCampaignservice(req.body);
 
       return res
         .status(201)
-        .json({ message: 'Campaign created successfully' });
+        .json({ message: 'Campaign created successfully', id: idCreated });
+    } catch (error: any) {
+      return res.status(500).json({ message: error.message });
+    }
+  }
+
+  async updateCampaignController(
+    req: Request,
+    res: Response
+  ): Promise<Response> {
+    try {
+      await this._service.updateCampaignService(req.params.id, req.body);
+
+      return res
+        .status(200)
+        .json({ message: 'Campaign updated successfully' });
     } catch (error: any) {
       return res.status(500).json({ message: error.message });
     }

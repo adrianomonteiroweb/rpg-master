@@ -11,6 +11,10 @@ export class CampaignsService {
   }
 
   async createNewCampaignservice(campaign: ICampaign) {
-    await this._CampaignsRepository.createNewCampaignRepository(campaign);
+    return await this._CampaignsRepository.createNewCampaignRepository(campaign);
+  }
+
+  async updateCampaignService(campaignID: string, campaign: ICampaign) {
+    return await this._CampaignsRepository.updateCampaignRepository(campaignID, campaign);
   }
 }
