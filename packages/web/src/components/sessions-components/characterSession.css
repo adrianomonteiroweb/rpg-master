@@ -3,6 +3,12 @@
   padding: 2px;
 }
 
+@media (max-width: 425px) {
+  table td {
+    font-size: 8px;
+  }
+}
+
 @media (max-width: 320px) {
   table td {
     font-size: 8px;
