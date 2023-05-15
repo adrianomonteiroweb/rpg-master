@@ -10,13 +10,7 @@ export class CampaingsRepository {
     return allCampaings;
   }
 
-  async createNewUserRepository(user: ICampaign | any) {
+  async createNewCampaignRepository(user: ICampaign | any) {
     await this._CampaingsModel.create(user);
-  }
-
-  async getIdByUserEmailRepository(email: string) {
-    const idByUserEmail = await this._CampaingsModel.findOne({ where: { email } });
-
-    return idByUserEmail?.id ? idByUserEmail?.id : false;
   }
 }

@@ -35,7 +35,7 @@ export class CampaignsController {
       .json(allCampaigns);
   }
 
-  async createNewUserController(
+  async createNewCampaignController(
     req: Request,
     res: Response
   ): Promise<Response> {
@@ -43,7 +43,8 @@ export class CampaignsController {
       await this._service.createNewCampaignservice(req.body);
 
       return res
-        .status(201).json({ message: 'Campaign created successfully' });
+        .status(201)
+        .json({ message: 'Campaign created successfully' });
     } catch (error: any) {
       return res.status(500).json({ message: error.message });
     }

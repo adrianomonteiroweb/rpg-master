@@ -10,14 +10,21 @@ function MenuComponent() {
   const { campaign } = useContext(IsContext);
 
   const saveToDatabaseByAPI = async (target: any) => {
-    const fetchIs = await fetchResultAPI(
+    const fetchGet = await fetchResultAPI(
+      "get",
+      process.env.REACT_APP_HOST,
+      "campaign",
+      campaign
+    );
+
+    const fetchPost = await fetchResultAPI(
       "post",
       process.env.REACT_APP_HOST,
       "campaign",
       campaign
     );
 
-    console.log(fetchIs, process.env.REACT_APP_HOST);
+    console.log(fetchGet, fetchPost, process.env.REACT_APP_HOST);
   };
 
   return (
