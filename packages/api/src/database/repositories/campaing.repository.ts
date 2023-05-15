@@ -5,12 +5,23 @@ export class CampaingsRepository {
   private readonly _CampaingsModel = CampaignModel;
 
   async getAllCampaingsRepository() {
-    const allCampaings = await this._CampaingsModel.find();
-
-    return allCampaings;
+    return await this._CampaingsModel.find();
   }
 
-  async createNewCampaignRepository(user: ICampaign | any) {
-    await this._CampaingsModel.create(user);
+  async createNewCampaignRepository(campaign: ICampaign | any) {
+    const created = await this._CampaingsModel.create(campaign);
+
+    return created._id;
+  }
+
+  async updateCampaignRepository(campaignID: string, campaign: ICampaign | any) {
+    await this._CampaingsModel.findByIdAndUpdate(
+      {
+        _id: campaignID
+      },
+      {
+        ...campaign
+      }
+    );
   }
 }

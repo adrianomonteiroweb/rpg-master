@@ -23,7 +23,8 @@ campaignRouter
     "/campaign",
     accessControlMiddleware,
     (_req, res) => useCampaignController
-      .getAllCampaignsController(_req, res));
+      .getAllCampaignsController(_req, res)
+  );
 
 campaignRouter
   .options("/campaign", cors())
@@ -31,6 +32,16 @@ campaignRouter
     "/campaign",
     accessControlMiddleware,
     (_req, res) => useCampaignController
-      .createNewCampaignController(_req, res));
+      .createNewCampaignController(_req, res)
+  );
+
+campaignRouter
+  .options("/campaign/:id", cors())
+  .put(
+    "/campaign/:id",
+    accessControlMiddleware,
+    (req, res) => useCampaignController
+      .updateCampaignController(req, res)
+  );
 
 export default campaignRouter;

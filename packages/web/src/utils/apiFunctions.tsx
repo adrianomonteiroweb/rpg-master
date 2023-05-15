@@ -21,8 +21,6 @@ const fetchResultAPI = async (
           return await axios.delete(`${url}/${alias}/${id}`);
       
         case "post":
-          console.log(`${url}/${alias}`, {...data});
-          
           return await axios.post(`${url}/${alias}`, {...data});
       }
     } catch (error: any) {
