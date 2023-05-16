@@ -1,8 +1,9 @@
+import ICharacter from "../../utils/interfaces";
 import InputComponent from "../inputs-components/InputComponent";
 
-import "./characterComponent.css"
+import "./characterComponent.css";
 
-function CharacterComponent() {
+function CharacterComponent({ data }: ICharacter) {
   return (
     <tr className="character-tr">
       <td>
@@ -10,7 +11,7 @@ function CharacterComponent() {
           input={[
             "text",
             "character-name",
-            "",
+            data.name,
             ""
           ]}
         />
@@ -20,7 +21,7 @@ function CharacterComponent() {
           input={[
             "text",
             "character-class",
-            "",
+            data.classe,
             ""
           ]}
         />
@@ -30,7 +31,7 @@ function CharacterComponent() {
           input={[
             "text",
             "player-name",
-            "",
+            data.player,
             ""
           ]}
         />
@@ -40,7 +41,7 @@ function CharacterComponent() {
           input={[
             "number",
             "pv-character",
-            0,
+            data.PV,
             ""
           ]}
         />
@@ -50,7 +51,7 @@ function CharacterComponent() {
           input={[
             "number",
             "total-pv-character",
-            0,
+            data.totalPV,
             ""
           ]}
         />
@@ -60,7 +61,7 @@ function CharacterComponent() {
           input={[
             "number",
             "ca-character",
-            0,
+            data.CA,
             ""
           ]}
         />
@@ -70,7 +71,7 @@ function CharacterComponent() {
           input={[
             "number",
             "negative-pv-character",
-            0,
+            data.negativePV,
             ""
           ]}
         />
@@ -80,7 +81,7 @@ function CharacterComponent() {
           input={[
             "string",
             "class-powers-character",
-            0,
+            data.classPowers,
             ""
           ]}
         />
@@ -90,7 +91,7 @@ function CharacterComponent() {
           input={[
             "string",
             "status-character",
-            "",
+            data.status,
             ""
           ]}
         />
