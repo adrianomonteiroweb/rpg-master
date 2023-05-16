@@ -78,16 +78,6 @@ function CharacterComponent({ data }: ICharacter) {
           ]}
         />
       </td>
-      <td>
-        <InputComponent
-          input={[
-            "string",
-            "status-character",
-            data.status,
-            ""
-          ]}
-        />
-      </td>
     </tr>
   );
 }

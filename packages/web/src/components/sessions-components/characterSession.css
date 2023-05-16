@@ -5,12 +5,12 @@
 
 @media (max-width: 425px) {
   table td {
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 
 @media (max-width: 320px) {
   table td {
-    font-size: 8px;
+    font-size: 10px;
   }
 }
