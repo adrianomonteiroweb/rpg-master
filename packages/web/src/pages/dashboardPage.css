@@ -1,5 +1,29 @@
 .dashboard {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard .show-hide-button {
+  background-color: transparent;
+  border: 0.5px solid rgba(0, 0, 0, 0.226);
+  color: rgba(0, 0, 0, 0.753);
+  margin-top: 10px;
+}
+
+.dashboard .show-hide-button:active {
+  background-color: rgba(255, 255, 0, 0.274);
+  color: black;
+}
+
+@media (max-width: 425px) {
+  .dashboard .show-hide-button {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .dashboard .show-hide-button {
+    font-size: 10px;
+  }
 }
