@@ -46,7 +46,6 @@ function CharacterSession() {
               <td>Jogador / PV</td>
               <td>PV Total / CA</td>
               <td>PV Negativo - Poderes de Classe</td>
-              <td>Status</td>
             </tr>
             {
               characters
