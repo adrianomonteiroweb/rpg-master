@@ -15,8 +15,6 @@ function CharacterComponent({ data }: ICharacter) {
             ""
           ]}
         />
-      </td>
-      <td>
         <InputComponent
           input={[
             "text",
@@ -35,8 +33,6 @@ function CharacterComponent({ data }: ICharacter) {
             ""
           ]}
         />
-      </td>
-      <td>
         <InputComponent
           input={[
             "number",
@@ -55,8 +51,6 @@ function CharacterComponent({ data }: ICharacter) {
             ""
           ]}
         />
-      </td>
-      <td>
         <InputComponent
           input={[
             "number",
@@ -75,8 +69,6 @@ function CharacterComponent({ data }: ICharacter) {
             ""
           ]}
         />
-      </td>
-      <td>
         <InputComponent
           input={[
             "string",

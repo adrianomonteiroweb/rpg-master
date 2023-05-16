@@ -39,29 +39,27 @@ function CharacterSession() {
         />
       </div>
       <div className="character-table">
-        <Table>
-          <tr>
-            <td>Personagem</td>
-            <td>Classe</td>
-            <td>Jogador</td>
-            <td>PV</td>
-            <td>PV Total</td>
-            <td>CA</td>
-            <td>PV Negativo</td>
-            <td>Poderes de Classe</td>
-            <td>Status</td>
-          </tr>
-          {
-            characters
-              .map((character, index) => (
-                <CharacterComponent
-                  key={index}
-                  data={
-                    character
-                  }
-                />
-              ))
-          }
+        <Table striped bordered hover>
+          <tbody>
+            <tr>
+              <td>Personagem / Classe</td>
+              <td>Jogador / PV</td>
+              <td>PV Total / CA</td>
+              <td>PV Negativo - Poderes de Classe</td>
+              <td>Status</td>
+            </tr>
+            {
+              characters
+                .map((character, index) => (
+                  <CharacterComponent
+                    key={index}
+                    data={
+                      character
+                    }
+                  />
+                ))
+            }
+          </tbody>
         </Table>
       </div>
     </>
