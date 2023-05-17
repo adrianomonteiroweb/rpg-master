@@ -1,4 +1,4 @@
-export default interface ICharacter {
+export interface ICharacter {
   character: {
       id: number;
       name: string;
@@ -12,4 +12,16 @@ export default interface ICharacter {
       campaignID: string;
   },
   setCharacters: Function
+}
+
+export interface IBattle {
+  battle: {
+    id: number;
+    name: string;
+    initiative: string;
+    CA: number;
+    PV: number;
+    damage: number;
+  },
+  setBattles: Function
 }

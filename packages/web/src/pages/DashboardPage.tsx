@@ -4,11 +4,14 @@ import CampaignSession from "../components/sessions-components/CampaignSession";
 import CharacterSession from "../components/sessions-components/CharacterSession";
 
 import "./dashboardPage.css"
+import BattleSession from "../components/sessions-components/BattleSession";
 
 function Dashboard() {
   const [showCharacters, setShowCharacters] = useState(false);
+  const [showBattles, setShowBattles] = useState(false);
 
   const changeShowCharacters = () => !showCharacters ? setShowCharacters(true) : setShowCharacters(false);
+  const changeShowBattles = () => !showBattles ? setShowBattles(true) : setShowBattles(false);
 
   return (
     <div className="dashboard">
@@ -21,7 +24,16 @@ function Dashboard() {
           changeShowCharacters
         ]}
       />
-      {!showCharacters ? undefined : <CharacterSession />}
+      {showCharacters && <CharacterSession />}
+      <ButtonComponent
+        btn={[
+          !showBattles ? "+ Exibir Sessão de Batalhas" : "- Esconder Sessão de Batalhas",
+          "show-hide-button",
+          "show-hide-battles",
+          changeShowBattles
+        ]}
+      />
+      {showBattles && <BattleSession />}
     </div>
   );
 }
