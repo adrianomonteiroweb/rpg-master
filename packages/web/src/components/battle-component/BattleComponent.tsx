@@ -1,7 +1,7 @@
 import { IBattle } from "../../utils/interfaces";
 import InputComponent from "../inputs-components/InputComponent";
 
-// import "./battleComponent.css";
+import "./battleComponent.css";
 
 function BattleComponent({ battle, setBattles }: IBattle) {
   return (
