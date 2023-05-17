@@ -2,7 +2,7 @@ import * as React from 'react';
 
 // interfaces
 export interface IContext {
-  id?: number;
+  id: string;
   title: string;
   subtitle: string;
 }
@@ -21,13 +21,18 @@ export type IsContextType = {
 export const IsContext = React.createContext<IsContextType | any>(null);
 
 const IsProvider: React.FC<Props> = ({ children }) => {
-  const [campaign, setCampaign] = React.useState<IContext>(
-    {
-      id: 1,
-      title: 'Crônicas de Alsaid',
-      subtitle: 'Entre areia e sangue'
-    }
-  );
+  const campaignID: string | null = localStorage.getItem("campaignID");
+  
+  const [campaign, setCampaign] = React
+    .useState<IContext>(
+      !campaignID
+        ? {
+            id: "",
+            title: "",
+            subtitle: "",
+          }
+        : JSON.parse(campaignID)
+    );
 
   return <IsContext.Provider value={{ campaign, setCampaign }}>{children}</IsContext.Provider>;
 };

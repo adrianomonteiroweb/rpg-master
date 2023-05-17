@@ -1,11 +1,11 @@
 .character-table {
-  width: 90%;
+  width: 98%;
   padding: 2px;
 }
 
 @media (max-width: 425px) {
   table td {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 

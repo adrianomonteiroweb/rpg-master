@@ -22,17 +22,17 @@
   }
 
   .input-component {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 320px) {
   [for="title-campaign"] h6,
   [for="subtitle-campaign"] h6 {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .input-component {
-    font-size: 8px;
+    font-size: 10px;
   }
 }

@@ -19,15 +19,16 @@ function MenuComponent() {
         "campaign",
         campaign
       );
-
-      if (fetchPost) localStorage.setItem("campaignID", JSON.stringify(fetchPost.data.id))
+      
+      if (fetchPost)
+        localStorage.setItem("campaignID", JSON.stringify({ ...campaign, id: fetchPost.data.id }))
     } else {
       await fetchResultAPI(
         "put",
         process.env.REACT_APP_HOST,
         "campaign",
-        campaign,
-        JSON.parse(campaignID)
+        { title: campaign.title, subtitle: campaign.subtitle },
+        JSON.parse(campaignID).id
       );
     }
   };
@@ -36,7 +37,7 @@ function MenuComponent() {
     <div className="menuComponent">
       <ButtonComponent
         btn={[
-          "Salvar",
+          "Salvar Campanha",
           "button-component save",
           "top-menu-save",
           saveToDatabaseByAPI

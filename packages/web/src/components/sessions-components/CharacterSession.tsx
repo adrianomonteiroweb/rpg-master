@@ -4,28 +4,53 @@ import { Table } from "react-bootstrap";
 import ButtonComponent from "../button-component/ButtonComponent";
 import CharacterComponent from "../character-component/CharacterComponent";
 
+import fetchResultAPI from "../../utils/apiFunctions";
+
 import "./characterSession.css";
 
 function CharacterSession() {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState<any[]>([]);
 
-  const initialCharactersFunction = () => {
-      localStorage.setItem("characters", JSON.stringify(
-        [
-          { name: "Personagem 1", classe: "Classe", player: "Jogador 1", PV: 0, totalPV: 0, CA: 0, negativePV: 0, classPowers: "", status: "Normal" },
-          { name: "Personagem 2", classe: "Classe", player: "Jogador 2", PV: 0, totalPV: 0, CA: 0, negativePV: 0, classPowers: "", status: "Normal" },
-          { name: "Personagem 3", classe: "Classe", player: "Jogador 3", PV: 0, totalPV: 0, CA: 0, negativePV: 0, classPowers: "", status: "Normal" }
-        ]
-      ))
+  const addNewCharacter = () => {
+    const campaignID: string | null = localStorage.getItem("campaignID");
+
+    setCharacters([...characters, { id: characters.length + 1, name: "", classe: "", player: "", PV: 0, totalPV: 0, CA: 0, negativePV: 0, classPowers: "", campaignID: campaignID && JSON.parse(campaignID).id }]);
   };
 
-  useEffect(() => {
-    const charactersLS = localStorage.getItem("characters");
+  const saveCharactersAPI = async () => await fetchResultAPI(
+    "put",
+    process.env.REACT_APP_HOST,
+    "character",
+    characters
+  );
 
-    !charactersLS
-      ? initialCharactersFunction()
-      : setCharacters(JSON.parse(charactersLS));
-  }, []);
+  useEffect(() => {
+    const charactersLS: string | null = localStorage.getItem("characters");
+
+    charactersLS && setCharacters(JSON.parse(charactersLS));
+  }, [])
+
+  useEffect(() => {
+    localStorage
+      .setItem("characters", JSON.stringify(characters));
+    console.log(characters);
+  }, [characters]);
+
+  const setCharactersFunction = (event: any, prop: any) => {
+    const id = Number(event.target.parentNode.parentNode.id);
+    
+    let filterCharacterByID = characters
+      .filter((char) => char.id === Number(id));
+
+    prop === "PV" || prop === "CA" || prop === "totalPV" || prop === "negativePV"
+      ? filterCharacterByID[0][prop] = Number(event.target.value)
+      : filterCharacterByID[0][prop] = event.target.value;
+    
+    const charactersNoChanged = characters
+      .filter((char) => char.id !== Number(id));
+    
+    setCharacters([...charactersNoChanged, ...filterCharacterByID]);
+  }
 
   return (
     <>
@@ -34,7 +59,16 @@ function CharacterSession() {
           btn={[
             "Novo Personagem",
             "button-component new",
-            "new-character"
+            "new-character",
+            addNewCharacter
+          ]}
+        />
+        <ButtonComponent
+          btn={[
+            "Salvar Personagens",
+            "button-component save",
+            "save-characters",
+            saveCharactersAPI
           ]}
         />
       </div>
@@ -52,9 +86,8 @@ function CharacterSession() {
                 .map((character, index) => (
                   <CharacterComponent
                     key={index}
-                    data={
-                      character
-                    }
+                    character={ character }
+                    setCharacters={ setCharactersFunction }
                   />
                 ))
             }
