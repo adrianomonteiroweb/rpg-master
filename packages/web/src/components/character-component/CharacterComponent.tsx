@@ -1,4 +1,4 @@
-import ICharacter from "../../utils/interfaces";
+import { ICharacter } from "../../utils/interfaces";
 import InputComponent from "../inputs-components/InputComponent";
 
 import "./characterComponent.css";
