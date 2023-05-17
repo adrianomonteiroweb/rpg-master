@@ -3,24 +3,30 @@ import InputComponent from "../inputs-components/InputComponent";
 
 import "./characterComponent.css";
 
-function CharacterComponent({ data }: ICharacter) {
+function CharacterComponent({ character, setCharacters }: ICharacter) {
   return (
-    <tr className="character-tr">
+    <tr className="character-tr" id={`${character.id}`}>
       <td>
         <InputComponent
           input={[
             "text",
             "character-name",
-            data.name,
-            ""
+            character.name,
+            "",
+            setCharacters,
+            "name",
+            "Personagem"
           ]}
         />
         <InputComponent
           input={[
             "text",
             "character-class",
-            data.classe,
-            ""
+            character.classe,
+            "",
+            setCharacters,
+            "classe",
+            "Classe"
           ]}
         />
       </td>
@@ -29,16 +35,21 @@ function CharacterComponent({ data }: ICharacter) {
           input={[
             "text",
             "player-name",
-            data.player,
-            ""
+            character.player,
+            "",
+            setCharacters,
+            "player",
+            "Jogador"
           ]}
         />
         <InputComponent
           input={[
             "number",
             "pv-character",
-            data.PV,
-            ""
+            character.PV,
+            "",
+            setCharacters,
+            "PV"
           ]}
         />
       </td>
@@ -47,16 +58,20 @@ function CharacterComponent({ data }: ICharacter) {
           input={[
             "number",
             "total-pv-character",
-            data.totalPV,
-            ""
+            character.totalPV,
+            "",
+            setCharacters,
+            "totalPV"
           ]}
         />
         <InputComponent
           input={[
             "number",
             "ca-character",
-            data.CA,
-            ""
+            character.CA,
+            "",
+            setCharacters,
+            "CA"
           ]}
         />
       </td>
@@ -65,16 +80,21 @@ function CharacterComponent({ data }: ICharacter) {
           input={[
             "number",
             "negative-pv-character",
-            data.negativePV,
-            ""
+            character.negativePV,
+            "",
+            setCharacters,
+            "negativePV"
           ]}
         />
         <InputComponent
           input={[
             "string",
             "class-powers-character",
-            data.classPowers,
-            ""
+            character.classPowers,
+            "",
+            setCharacters,
+            "classPowers",
+            "Poderes de Classe"
           ]}
         />
       </td>

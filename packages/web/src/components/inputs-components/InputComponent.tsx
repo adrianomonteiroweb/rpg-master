@@ -16,6 +16,7 @@ function InputComponent({
     nivelText,
     eventFunc,
     prop,
+    placeholder,
     nivel ]
 }: IInput) {
   return (
@@ -28,6 +29,7 @@ function InputComponent({
         className="input-component"
         id={`${id}`}
         value={value}
+        placeholder={ placeholder }
         onChange={(event) => eventFunc ? eventFunc(event, prop, nivel) : undefined}
       />
     </>

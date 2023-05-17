@@ -2,9 +2,10 @@ import { useContext } from "react";
 
 import InputComponent from "../inputs-components/InputComponent";
 
-import "./campaignSession.css";
 import { IsContext } from "../../context/IsProvider";
 import MenuComponent from "../menu-component/menuComponent";
+
+import "./campaignSession.css";
 
 function CampaignSession() {
   const { campaign, setCampaign } = useContext(IsContext);
