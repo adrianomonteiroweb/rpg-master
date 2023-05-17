@@ -7,11 +7,31 @@ import "./dashboardPage.css"
 import BattleSession from "../components/sessions-components/BattleSession";
 
 function Dashboard() {
-  const [showCharacters, setShowCharacters] = useState(false);
-  const [showBattles, setShowBattles] = useState(false);
+  const showCharacterLS: string | null | any = localStorage.getItem("showCharacter") || true;
+  const showBattlesLS: string | null | any = localStorage.getItem("showBattle") || true;
 
-  const changeShowCharacters = () => !showCharacters ? setShowCharacters(true) : setShowCharacters(false);
-  const changeShowBattles = () => !showBattles ? setShowBattles(true) : setShowBattles(false);
+  const [showCharacters, setShowCharacters] = useState(JSON.parse(showCharacterLS));
+  const [showBattles, setShowBattles] = useState(JSON.parse(showBattlesLS));
+
+  const changeShowCharacters = () => {
+    if (!showCharacters) {
+      setShowCharacters(true);
+      localStorage.setItem("showCharacter", JSON.stringify(true));
+    } else {
+      setShowCharacters(false);
+      localStorage.setItem("showCharacter", JSON.stringify(false));
+    }
+  }
+
+  const changeShowBattles = () => {
+    if (!showBattles) {
+      setShowBattles(true);
+      localStorage.setItem("showBattle", JSON.stringify(true));
+    } else {
+      setShowBattles(false);
+      localStorage.setItem("showBattle", JSON.stringify(false));
+    }
+  }
 
   return (
     <div className="dashboard">
